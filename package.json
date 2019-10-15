@@ -1,0 +1,29 @@
+{
+  "name": "angularjoomla-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for creating Angular Apps with NodeJS middleware and Joomla3 backend.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optikool/AngularJoomla-Boilerplate.git"
+  },
+  "keywords": [
+    "Angular",
+    "Joomla"
+  ],
+  "author": "Dana Harris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/optikool/AngularJoomla-Boilerplate/issues"
+  },
+  "homepage": "https://github.com/optikool/AngularJoomla-Boilerplate#readme",
+  "dependencies": {
+    "videogular2": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/core-js": "^2.5.2"
+  }
+}
