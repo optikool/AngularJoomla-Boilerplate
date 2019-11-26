@@ -23,6 +23,8 @@ import { ServicesModule } from './services/services.module';
 import { ViewsModule } from './views/views.module';
 
 import { reducers } from './store/app.reducers';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { reducers } from './store/app.reducers';
     VgBufferingModule,
     VgStreamingModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [DirectivesModule],
   bootstrap: [AppComponent]
