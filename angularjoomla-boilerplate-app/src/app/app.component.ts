@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularjoomla-boilerplate-app';
+
+  // ng serve Add nodejs server with ts enabled
 }

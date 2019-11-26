@@ -14,7 +14,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ComponentsModule } from './components/components.module';
 import { DirectivesModule } from './directives/directives.module';
@@ -48,7 +47,7 @@ import { reducers } from './store/app.reducers';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([])
   ],
-  providers: [NgbModule, DirectivesModule],
+  providers: [DirectivesModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
