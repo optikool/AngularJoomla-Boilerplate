@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "../node_modules/videogular2/fonts/videogular.css",
               "src/styles.less"
             ],
@@ -94,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.less"
             ],
             "scripts": []
@@ -148,6 +150,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angularjoomla-boilerplate-app"
 }
