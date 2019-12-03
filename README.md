@@ -1,2 +1,2 @@
 # AngularJoomla-Boilerplate
-Boilerplate for creating Angular Apps with NodeJS middleware and Joomla3 backend.
+Boilerplate for creating Angular 8 Apps with Angular Material, Angular PWA, NestJS middleware and Joomla3 backend.
