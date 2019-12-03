@@ -23,6 +23,7 @@ import { ServicesModule } from './services/services.module';
 import { ViewsModule } from './views/views.module';
 
 import { reducers } from './store/app.reducers';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
