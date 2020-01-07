@@ -1,0 +1,39 @@
+<!--start slider -->
+<div id="slider-wrapper" class="fluid" jmaCarouselAnimation [data]="galleries">
+    <!--start slider images-->
+    <ul id="slider">
+        <li *ngFor="let item of galleries; let i = index" class="panel">
+            <div class="slider-item item_{{i}}" [ngStyle]="{'background-image': 'url(' + item.src + ')'}">
+                <!--start slider 1 caption -->
+                <div class="caption-content {{item.animateClassName}}">
+                    <p>
+                        <span>{{item.title}}</span>
+                    </p>
+                    <p class="pictured">
+                        <strong>{{item.cattitle}}</strong>
+                    </p>
+                </div>
+                <!--end slider 1 caption -->
+            </div>
+        </li>
+    </ul>
+    <!--end slider images-->
+    <div class="anythingControls">
+        <a href="#" class="start-stop playing">
+            <span>Stop</span>
+        </a>
+        <ul id="thumb-nav" class="thumbNav">
+            <li *ngFor="let navItem of galleries; let i = index">
+                <a class="slidertip panel{{i}}" (click)="goToSlide(i)">
+                    {{i + 1}}<span class="tooltip top center slide-up"><div><img [src]="navItem.imgThumb"></div></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--slider navigation-->
+    <div id="prev-button" class="prevButton slidebackward"></div>
+    <div id="next-button" class="nextButton slideforward"></div>
+    <div id="pause-button" class="pauseButton"></div>
+    <!--end slider navigation-->
+</div>
+<!-- end slider -->

@@ -1,0 +1,8 @@
+<h4 class="footer_title">{{videoData.title}}</h4>
+<div class="fancycaption both" jmaFancycaptionSlidetop [slidepos]="-150">
+    <div class="caption slide-top">
+        <p [innerHtml]="videoData.intro"></p>
+        <a class="button" routerLink="/videos/single/{{videoData.catid}}/{{videoData.id}}/{{videoData.itemId}}">view video</a>
+    </div>
+    <img [src]="videoData.imgThumb" alt="{{videoData.title}}" width="298" height="150" />
+</div>

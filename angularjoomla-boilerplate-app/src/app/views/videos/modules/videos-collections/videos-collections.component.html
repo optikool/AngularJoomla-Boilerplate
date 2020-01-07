@@ -1,0 +1,21 @@
+<div class="scrollable" jmaScrollable (scrollPosition)="scrollHandler($event)">
+    <ng-container *ngFor="let item of videos; let i = index">
+        <div class="grid_6 alpha">
+            <h4><a routerLink="/videos/single/{{item.catid}}/{{item.id}}/{{item.itemId}}">{{item.title}}</a></h4>
+            <p>
+                <a class="zoom" routerLink="/videos/single/{{item.catid}}/{{item.id}}/{{item.itemId}}">
+                    <img [src]="item.imgThumb" width="462" height="260" alt="{{item.title}}">
+                </a>
+            </p>
+            <p [innerHtml]="item.intro"></p>
+            <a class="button" routerLink="/videos/single/{{item.catid}}/{{item.id}}/{{item.itemId}}">view video</a>
+        </div>
+        <ng-container *ngIf="isEven(i)">
+            <div class="clear"></div>
+            <hr class="grid_12 alpha">
+        </ng-container>
+    </ng-container>
+    <div class="pagination-button-container">
+        <a class="button" (click)="loadMoreVideos()" *ngIf="hasMoreVideos()">load more</a>
+    </div>
+</div>

@@ -63,7 +63,7 @@
                   "maximumError": "10kb"
                 }
               ],
-              "serviceWorker": true,
+              "serviceWorker": false,
               "ngswConfigPath": "ngsw-config.json"
             }
           }
@@ -99,6 +99,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/videogular2/fonts/videogular.css",
               "src/styles.less"
             ],
             "scripts": []
