@@ -1,0 +1,44 @@
+<jma-teaser-widget-placeholder *ngIf="!teaserInfoReady"></jma-teaser-widget-placeholder>
+<jma-teaser-widget *ngIf="teaserInfoReady" [data]="movieInfo"></jma-teaser-widget>
+<div id="container" class="fluid">
+    <div class="container_12 clearfix">
+        <div id="content" class="grid_12" *ngIf="teaserInfoReady">
+            <div class="grid_4 alpha" id="project">
+                <ul>
+                    <li>
+                        <h4>Description</h4>
+                    </li>
+                    <li [innerHtml]="movieInfo.text"></li>
+                    <li>
+                        <h5>Category</h5>
+                        <span>{{movieInfo.category}}</span>
+                    </li>
+                    <li>
+                        <h5>Tags</h5>
+                        <span>{{movieInfo.tags | tagFormatter}}</span>
+                    </li>
+                    <li>
+                        <h5>Date Added</h5>
+                        <span>Posted at {{movieInfo.displayDate | dateFormatter}}</span>
+                    </li>
+                    <li>
+                        <h5>Hits</h5>
+                        <span>{{movieInfo.hits}}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!--project picture-->
+            <div class="grid_8 portfolio omega">
+                <p *ngIf="getType('social')">
+                    <span [innerHtml]="movieInfo.embedIframe"></span>
+                </p>
+                
+            </div>
+            <!--end project picture-->
+        </div>
+        <jma-loading-full-page *ngIf="!movieDataReady"></jma-loading-full-page>
+    </div>
+</div>
+<jma-footer-bar *ngIf="videosRandomReady" [data]="videosRandom"></jma-footer-bar>
+<jma-subfooter-bar></jma-subfooter-bar>

@@ -1,0 +1,11 @@
+<ul class="portfolio clearfix">
+    <li *ngFor="let item of galleries" data-id="id-{{item.id}}" data-type="{{item.catalias}}" jmaFancycaptionSlidetop [slidepos]="-220">
+        <div class="fancycaption both">
+            <div class="caption slide-top">
+                <a routerLink="/gallery/single/{{item.catid}}/{{item.id}}/{{item.itemId}}">
+                    <h4>{{item.title}}</h4> <span>{{item.cattitle}}</span></a>
+            </div>
+            <a routerLink="/gallery/single/{{item.catid}}/{{item.id}}/{{item.itemId}}"><img [src]="item.imgThumb" alt="#" width="318" height="212"></a>
+        </div>
+    </li>
+</ul>

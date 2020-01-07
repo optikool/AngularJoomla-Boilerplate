@@ -1,0 +1,15 @@
+.fancycaption {
+    .caption {
+        .button {
+            position: relative;
+            left: 215px;
+        }
+        p {
+            padding: 5px 10px 0 10px;
+        }
+    }
+    .slide-top {
+        top: -150px;
+        transition: all 300ms;
+    }
+}

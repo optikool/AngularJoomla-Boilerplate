@@ -1,0 +1,8 @@
+<h4 class="footer_title">{{info.title}}</h4>
+<div>
+    <ul id="flickr" class="thumbs">
+        <li *ngFor="let item of galleries; let i = index">
+            <a title="{{info.title}}" (click)="openGallery(i)"><img [src]="item.thumb" alt=""></a>
+        </li>
+    </ul>
+</div>
