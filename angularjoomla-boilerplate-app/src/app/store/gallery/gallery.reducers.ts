@@ -1,7 +1,6 @@
 import * as GalleryActions from './gallery.actions';
 import GalleryState, { initialState } from './gallery.state';
 import { createReducer, on, Action } from '@ngrx/store';
-import { Collection } from './gallery.model';
 
 export const featureKey = 'gallery';
 export const initialstate = initialState();
@@ -19,16 +18,16 @@ const reducer = createReducer(
             Collections: payload
         }
     }),
-    on(GalleryActions.GetCollectionsLatestAction, (state: GalleryState, { payload }) => {
+    on(GalleryActions.GetCollectionsLatestAction, (state: GalleryState) => {
         return {
             ...state,
-            LatestCollections: state.Collections.slice(0, payload)
+            LatestCollections: state.Collections.slice(0, state.LatestCollectionLimit)
         }
     }),
-    on(GalleryActions.SetCollectionsLatestAction, (state: GalleryState, { payload }) => {
+    on(GalleryActions.SetCollectionsLatestLimitAction, (state: GalleryState, { payload }) => {
         return {
             ...state,
-            LatestCollections: state.Collections.slice(0, payload)
+            LatestCollectionLimit: payload
         }
     }),
     on(GalleryActions.GetCollectionsRandomAction, (state) => {
@@ -43,7 +42,6 @@ const reducer = createReducer(
         }
     }),
     on(GalleryActions.ErrorCollectionsAction, (state: GalleryState, error: Error) => {
-        console.log('Error occured: ', error);
         return {
             ...state,
             GalleryError: error

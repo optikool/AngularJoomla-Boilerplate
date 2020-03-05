@@ -19,7 +19,7 @@
 // "imgThumb": "http://localhost/optikool-app/images/xm/thumbs/Kayumi_34_Arenas_Eps_04.jpg",
 // "tags": []
 
-export class Movie {
+export interface Movie {
     id: number;
     title: string;
     alias: string;
@@ -40,6 +40,7 @@ export class Movie {
     catidoa: string;
     imgThumb: string;
     tags: Array<any>;
+    isActive?: string;
 }
 
 // "id": "12",
@@ -56,7 +57,7 @@ export class Movie {
 // "metakey": "",
 // "metadata": "{\"author\":\"\",\"robots\":\"\"}"
 
-export class MovieCategory {
+export interface MovieCategory {
     id: number;
     parent_id: number;
     level: number;

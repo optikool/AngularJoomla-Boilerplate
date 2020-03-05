@@ -1,1 +1,8 @@
-<p>gallery-collections works!</p>
+<div>
+    <mat-grid-list cols="3" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let item of galleries">
+            <div>{{ item.title }}</div>
+            <div><img [src]="item.imgThumb" /></div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

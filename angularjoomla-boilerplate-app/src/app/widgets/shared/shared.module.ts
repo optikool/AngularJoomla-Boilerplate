@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CarouselAnimationDirective } from "./carousel-animation.directive";
-import { FancycaptionSlidetopDirective } from "./fancycaption-slidetop.directive";
+import { FancycaptionEffectDirective } from "./fancycaption-effect.directive";
 import { MenuDropdownDirective } from "./menu-dropdown.directive";
 import { ScrollableDirective } from "./scrollable.directive";
 import { WindowScrollDirective } from "./window-scroll.directive";
@@ -9,7 +9,7 @@ import { WindowScrollDirective } from "./window-scroll.directive";
 @NgModule({
     declarations: [
         CarouselAnimationDirective,
-        FancycaptionSlidetopDirective,
+        FancycaptionEffectDirective,
         MenuDropdownDirective,
         ScrollableDirective,
         WindowScrollDirective
@@ -17,7 +17,7 @@ import { WindowScrollDirective } from "./window-scroll.directive";
     exports: [
         CommonModule,
         CarouselAnimationDirective,
-        FancycaptionSlidetopDirective,
+        FancycaptionEffectDirective,
         MenuDropdownDirective,
         ScrollableDirective,
         WindowScrollDirective

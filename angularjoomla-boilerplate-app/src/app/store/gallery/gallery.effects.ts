@@ -1,66 +1,16 @@
 import { Injectable } from "@angular/core";
-import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
-import { HttpClient } from '@angular/common/http';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { GalleryActionsTypes }  from './gallery.actions';
-import { mergeMap, map, switchMap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
-import { Action } from '@ngrx/store';
-import { Collection } from './gallery.model';
+import { mergeMap, switchMap } from 'rxjs/operators';
 import { GalleryService } from '../../services/gallery.service';
 
 
 @Injectable()
 export class GalleryEffect {
-    constructor(private action$: Actions, private http: HttpClient, private galleryService: GalleryService) {}
-
-//     GetToDos$: Observable<Action> = createEffect(() =>
-//     this.action$.pipe(
-//       ofType(ToDoActions.BeginGetToDoAction),
-//       mergeMap(action =>
-//         this.http.get(this.ApiURL).pipe(
-//           map((data: ToDo[]) => {
-//             return ToDoActions.SuccessGetToDoAction({ payload: data });
-//           }),
-//           catchError((error: Error) => {
-//             return of(ToDoActions.ErrorToDoAction(error));
-//           })
-//         )
-//       )
-//     )
-//   );
-
-    // GetCollectionsAll$: Observable<Action> = createEffect(() => 
-    //     this.action$.pipe(
-    //         ofType(GalleryActions.GET_COLLECTIONS_ALL),
-    //         mergeMap(action => 
-    //             this.http.get('http://localhost:4200/api/gallery/all').pipe(
-    //                 map((results: Collection[]) => {
-    //                     console.log('Effect getCollectionAll http results: ', results);
-    //                     GalleryActions.SetCollectionsAllAction({ payload: results});
-    //                 }),
-    //                 catchError((error: Error) => {
-    //                     console.log('Error occured: ', error);
-    //                     return of(GalleryActions.ErrorCollectionsAction(error));
-    //                 })
-    //             )
-    //         )
-    //     )
-    // );
-
-    // GetCollectionRandom$: Observable<Action> = createEffect(() => this.actions$.pipe(
-    //     ofType(GalleryActions.GET_COLLECTIONS_RANDOM),
-    //     mergeMap((action) => {
-    //         return this.http.get<any>('http://localhost:4200/api/gallery/all')
-    //             .pipe(map((results) => {
-    //                 console.log('Effect getCollectionAll http results: ', results);
-    //                 return results;
-    //             }),
-    //             catchError((error: Error) => {
-    //                 console.log('Error occured: ', error);
-    //                 return of(GalleryActions.ErrorCollectionsAction(error));
-    //             }));
-    //     })
-    // ));
+    constructor(
+        private action$: Actions, 
+        private galleryService: GalleryService
+    ) {}
 
     @Effect()
     getCollectionAll = this.action$
@@ -74,8 +24,7 @@ export class GalleryEffect {
                     type: GalleryActionsTypes.SET_COLLECTION_ALL,
                     payload: data
                 },{
-                    type: GalleryActionsTypes.SET_COLLECTIONS_LATEST,
-                    payload: 10
+                    type: GalleryActionsTypes.GET_COLLECTIONS_LATEST
                 }];
             })
         );

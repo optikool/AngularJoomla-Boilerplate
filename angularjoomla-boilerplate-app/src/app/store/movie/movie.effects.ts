@@ -1,17 +1,18 @@
 import { Injectable } from "@angular/core";
-import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { HttpClient } from '@angular/common/http';
 import { MovieActionsTypes }  from './movie.actions';
-import { mergeMap, map, switchMap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
-import { Action } from '@ngrx/store';
-import { Movie } from './movie.model';
+import { mergeMap, switchMap } from 'rxjs/operators';
 import { MovieService } from '../../services/movie.service';
 
 
 @Injectable()
 export class MovieEffect {
-    constructor(private action$: Actions, private http: HttpClient, private movieService: MovieService) {}
+    constructor(
+        private action$: Actions, 
+        private http: HttpClient, 
+        private movieService: MovieService
+    ) {}
 
     @Effect()
     getMovieAll = this.action$
@@ -25,8 +26,7 @@ export class MovieEffect {
                     type: MovieActionsTypes.SET_MOVIES_ALL,
                     payload: data
                 },{
-                    type: MovieActionsTypes.SET_MOVIES_LATEST,
-                    payload: 10
+                    type: MovieActionsTypes.GET_MOVIES_LATEST
                 }];
             })
         );

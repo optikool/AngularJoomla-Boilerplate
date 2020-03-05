@@ -7,10 +7,12 @@ import { SocialMediaService } from '../../../../services/social-media.service';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent {
-  private link: string;
+  links: Array<any>;
+  link: string
 
   constructor() { 
     this.link = null;
+    this.links = [];
   }
 
   public goToSocial(name: string) {

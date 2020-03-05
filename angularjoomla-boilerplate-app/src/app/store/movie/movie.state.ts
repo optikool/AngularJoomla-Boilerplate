@@ -4,6 +4,7 @@ export default class MovieState {
     Movie: Movie;
     Movies: Array<Movie>;
     LatestMovies: Array<Movie>;
+    LatestMoviesLimit: number;
     RandomMovies: Array<Movie>;
     MoiveCategory: MovieCategory;
     MovieError: Error
@@ -35,6 +36,7 @@ export const initialState = (): MovieState => {
         },
         Movies: Array<Movie>(),
         LatestMovies: Array<Movie>(),
+        LatestMoviesLimit: 10,
         RandomMovies: Array<Movie>(),
         MoiveCategory: {
             id: null,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpService } from '../../services/http.service';
+// import { HttpService } from '../../services/http.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -20,7 +20,7 @@ export class VideosCategoryComponent implements OnInit {
   catid: number;
   itemid: number;
 
-  constructor(private http: HttpService, private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
     this.teaserInfoReady = false;
     this.videoDataReady = false;
     this.videosRandomReady = false;
@@ -53,14 +53,14 @@ export class VideosCategoryComponent implements OnInit {
   getCategoryData() {
     let that = this;
 
-    this.videoDataPromise = this.http.getMovieLatestCategoryData(this.catid, this.itemid)
-    .subscribe((data) => {
-        // that.videoData = data.items;
-        // that.teaserData.title = data.category.title;
-        // that.categoryDescription = data.category.description;
-        that.videoDataReady = true;
-        that.teaserInfoReady = true;
-    });
+    // this.videoDataPromise = this.http.getMovieLatestCategoryData(this.catid, this.itemid)
+    // .subscribe((data) => {
+    //     // that.videoData = data.items;
+    //     // that.teaserData.title = data.category.title;
+    //     // that.categoryDescription = data.category.description;
+    //     that.videoDataReady = true;
+    //     that.teaserInfoReady = true;
+    // });
   }
 
   getFooterTeasers() {

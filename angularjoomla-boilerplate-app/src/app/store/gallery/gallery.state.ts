@@ -3,6 +3,7 @@ import { Collection, CollectionCategory } from './gallery.model';
 export default class GalleryState {
     Collection: Collection;
     Collections: Array<Collection>;
+    LatestCollectionLimit: number;
     LatestCollections: Array<Collection>;
     RandomCollections: Array<Collection>;
     CollectionCategory: CollectionCategory;
@@ -32,6 +33,7 @@ export const initialState = (): GalleryState => {
             tags: []
         },
         Collections: Array<Collection>(),
+        LatestCollectionLimit: 10,
         LatestCollections: Array<Collection>(),
         RandomCollections: Array<Collection>(),
         CollectionCategory: {

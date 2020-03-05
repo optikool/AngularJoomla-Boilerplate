@@ -2,17 +2,17 @@ import { createAction, props } from "@ngrx/store";
 import { Collection } from './gallery.model';
 
 export enum GalleryActionsTypes {
-    GET_COLLECTIONS_ALL = 'GET_COLLECTIONS_ALL',
-    SET_COLLECTION_ALL = 'SET_COLLECTION_ALL',
-    GET_COLLECTIONS_LATEST = 'GET_COLLECTIONS_LATEST',
-    SET_COLLECTIONS_LATEST = 'SET_COLLECTIONS_LATEST',
-    GET_COLLECTIONS_RANDOM = 'GET_COLLECTIONS_RANDOM',
-    SET_COLLECTIONS_RANDOM = 'SET_COLLECTIONS_RANDOM',
-    GET_COLLECTIONS_ERROR = 'GET_COLLECTIONS_ERROR'
+    GET_COLLECTIONS_ALL = '[Gallery] Get Collections All',
+    SET_COLLECTION_ALL = '[Gallery] Set Collections All',
+    GET_COLLECTIONS_LATEST = '[Gallery] Get Collections',
+    SET_COLLECTIONS_LATEST_LIMIT = '[Gallery] Set Collections Latest Limit',
+    GET_COLLECTIONS_RANDOM = '[Gallery] Get Collections Random',
+    SET_COLLECTIONS_RANDOM = '[Gallery] Set Collections Random',
+    GET_COLLECTIONS_ERROR = '[Gallery] Get Collections Error'
 }
 
 export const GetCollectionsAllAction = createAction(
-    GalleryActionsTypes.GET_COLLECTIONS_ALL,
+    GalleryActionsTypes.GET_COLLECTIONS_ALL
 );
 
 export const SetCollectionsAllAction = createAction(
@@ -21,12 +21,11 @@ export const SetCollectionsAllAction = createAction(
 );
 
 export const GetCollectionsLatestAction = createAction(
-    GalleryActionsTypes.GET_COLLECTIONS_LATEST,
-    props<{ payload: number }>()
+    GalleryActionsTypes.GET_COLLECTIONS_LATEST
 );
 
-export const SetCollectionsLatestAction = createAction(
-    GalleryActionsTypes.SET_COLLECTIONS_LATEST,
+export const SetCollectionsLatestLimitAction = createAction(
+    GalleryActionsTypes.SET_COLLECTIONS_LATEST_LIMIT,
     props<{ payload: number }>()
 );
 

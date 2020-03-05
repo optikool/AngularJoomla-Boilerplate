@@ -21,7 +21,8 @@ export const initialState = (): GalleryState => {
             state: null,
             author: '',
             displayDate: null,
-            text: ''
+            text: '',
+            fullTest: ''
         },
         Articles: Array<Article>(),
         LatestArticles: Array<Article>(),

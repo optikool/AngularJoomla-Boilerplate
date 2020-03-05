@@ -7,6 +7,7 @@ import { VideosCollectionComponent } from "./videos-collection/videos-collection
 import { VideosCollectionsComponent } from "./videos-collections/videos-collections.component";
 import { VideosFceComponent } from "./videos-fce/videos-fce.component";
 import { PipesModule } from "../../../pipes/pipes.module";
+import { MaterialsModule } from '../../../helpers/materials.module';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { PipesModule } from "../../../pipes/pipes.module";
         CommonModule,
         SharedModule,
         RouterModule,
-        PipesModule
+        PipesModule,
+        MaterialsModule
     ],
     exports: [
         FancyCaptionMovieComponent,

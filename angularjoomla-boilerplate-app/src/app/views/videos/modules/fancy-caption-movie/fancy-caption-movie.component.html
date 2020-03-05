@@ -1,10 +1,25 @@
-<div *ngFor="let item of movies" class="grid_{{grid}}" jmaFancycaptionSlidetop [slidepos]="-150">
-    <div class="fancycaption both">
-        <div class="caption slide-top">
-            <a routerLink="/videos/single/{{item.catid}}/{{item.id}}/{{item.itemId}}">
-                <h4>{{item.title}}</h4> <span>{{item.cattitle}}</span>
-            </a>
-        </div>
-        <img [src]="item.imgThumb" alt="{{item.title}}" width="298" height="150">
-    </div>
+<div>
+    <mat-grid-list cols="{{columns}}" rowHeight="2:1">
+        <mat-grid-tile 
+            *ngFor="let item of movies"
+            appFancyCaptionEffect
+            (setIsActive)="handleIsActive($event, item)">
+            <div 
+                class="fancy-movie-cont"
+                [@fancyCaptionLoadState]="item.isActive">
+                <div 
+                    class="fancy-movie-top"
+                    [@fancyCaptionTopLoadState]="item.isActive"></div>
+                <div class="fancy-movie-body">
+                    <img [src]="item.imgThumb" />
+                </div>
+                <div 
+                    class="fancy-movie-bottom"
+                    [@fancyCaptionBottomLoadState]="item.isActive">
+                    <h6>{{ item.title }}</h6>
+                    <div>{{ item.cattitle }}</div>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>

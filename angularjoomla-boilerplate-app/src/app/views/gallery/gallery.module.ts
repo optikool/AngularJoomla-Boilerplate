@@ -4,6 +4,7 @@ import { GalleryComponent } from './gallery.component';
 import { GalleryMainComponent } from './gallery-main/gallery-main.component';
 import { GalleryCategoryComponent } from './gallery-category/gallery-category.component';
 import { GallerySingleComponent } from './gallery-single/gallery-single.component';
+import { GalleryRoutingModule } from './gallery-routing.module';
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import { GallerySingleComponent } from './gallery-single/gallery-single.componen
     ],
     imports: [
       CommonModule,
+      GalleryRoutingModule
     ],
     providers: []
 

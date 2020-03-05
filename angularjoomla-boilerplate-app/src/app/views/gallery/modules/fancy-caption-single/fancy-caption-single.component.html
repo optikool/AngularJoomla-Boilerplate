@@ -1,4 +1,4 @@
-<div *ngFor="let item of galleries" class="grid_{{grid}}" jmaFancycaptionSlidetop [slidepos]="-150">
+<!-- <div *ngFor="let item of galleries" class="grid_{{grid}}" jmaFancycaptionSlidetop [slidepos]="-150">
     <div class="fancycaption both">
         <div class="caption slide-top">
             <a routerLink="/gallery/single/{{item.catid}}/{{item.id}}/{{item.itemId}}">
@@ -7,4 +7,30 @@
         </div>
         <img [src]="item.imgThumb" alt="{{item.title}}" width="298" height="150">
     </div>
+</div> -->
+
+<div>
+    <mat-grid-list cols="{{columns}}" rowHeight="2:1">
+        <mat-grid-tile 
+            *ngFor="let item of galleries"
+            appFancyCaptionEffect
+            (setIsActive)="handleIsActive($event, item)">
+            <div 
+                class="fancy-gallery-cont"
+                [@fancyCaptionLoadState]="item.isActive">
+                <div 
+                    class="fancy-gallery-top"
+                    [@fancyCaptionTopLoadState]="item.isActive"></div>
+                <div class="fancy-gallery-body">
+                    <img [src]="item.imgThumb" />
+                </div>
+                <div 
+                    class="fancy-gallery-bottom"
+                    [@fancyCaptionBottomLoadState]="item.isActive">
+                    <h6>{{ item.title }}</h6>
+                    <div>{{ item.cattitle }}</div>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>

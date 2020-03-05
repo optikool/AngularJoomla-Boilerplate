@@ -20,6 +20,7 @@ import { DirectivesModule } from './directives/directives.module';
 import { ModalsModule } from './modals/modals.module';
 import { PipesModule } from './pipes/pipes.module';
 import { ViewsModule } from './views/views.module';
+import { HomeSharedModule } from './views/home/shared/home-shared.module';
 
 import { ArticleEffect } from './store/article/article.effects';
 import { GalleryEffect } from './store/gallery/gallery.effects';
@@ -30,6 +31,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GalleryService } from './services/gallery.service';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { MaterialsModule } from './helpers/materials.module';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MaterialsModule,
     ComponentsModule,
     DirectivesModule,
+    HomeSharedModule,
     ModalsModule,
     PipesModule,
     ViewsModule,

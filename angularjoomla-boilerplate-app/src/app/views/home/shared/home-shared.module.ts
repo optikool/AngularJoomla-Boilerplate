@@ -9,6 +9,7 @@ import { SubfooterBarComponent } from "./subfooter-bar/subfooter-bar.component";
 import { TopBarComponent } from "./top-bar/top-bar.component";
 import { GalleryModulesModule } from "../../gallery/modules/gallery-modules.module";
 import { VideosModulesModule } from "../../videos/modules/videos-modules.module";
+import { MatMenuModule, MatButtonModule, MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,12 @@ import { VideosModulesModule } from "../../videos/modules/videos-modules.module"
         SharedModule,
         GalleryModulesModule,
         VideosModulesModule,
-        RouterModule
+        RouterModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatListModule
         // NgxImageGalleryModule
     ],
     exports: [

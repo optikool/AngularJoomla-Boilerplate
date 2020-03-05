@@ -1,71 +1,68 @@
+<div id="header-bar">
+    <!-- <button mat-button
+        (mouseenter)="menuTrigger.openMenu()" 
+        #menuTrigger="matMenuTrigger"
+        [matMenuTriggerFor]="menu">Menu</button> -->
+    <button mat-button (click)="navigateToPage([''])">Home</button>
+    <button mat-button
+        style="z-index:1050"
+        id="gallery-btn"
+        #galleryMenuTrigger="matMenuTrigger"
+        (mouseenter)="galleryMenuTrigger.openMenu()"
+        [matMenuTriggerFor]="galleries"
+        (click)="navigateToPage(['/gallery'])"
+        >Galleries</button>
+    <!-- <button mat-button
+        style="z-index:1050"
+        id="videos-btn"
+        #videosyMenuTrigger="matMenuTrigger"
+        (mouseenter)="videosMenuTrigger.openMenu()"
+        [matMenuTriggerFor]="videos" 
+        (click)="navigateToPage(['/videos'])"
+        >Videos</button> -->
+    <button mat-button (click)="navigateToPage(['/blog'])">Blog</button>
+    <button mat-button (click)="navigateToPage(['/contact-us'])">Contact Us</button>
 
-<!--start header-->
-<div id="header" class="fluid">
-    <div class="container_12 clearfix">
-        <!--start logo-->
-        <div id="logo" class="grid_3">
-            <a routerLink="/">
-                <h1><img src="assets/img/maesworld.png" alt="your logo" width="180" height="40"></h1>
-            </a>
-        </div>
-        <!--end logo-->
+    <mat-menu #galleries="matMenu" >
+        <span>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '8', '123'])">J-Pop</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '10', '125'])">Import Scene</button>
+        <button mat-menu-item [matMenuTriggerFor]="warcraft" (click)="navigateToPage(['/gallery', 'category', '11', '126'])">World of Warcraft</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '12', '127'])">Beautiful Art</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '52', '382'])">Comic Con</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '14', '129'])">Cosplay</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '53', '383'])">Fanime Con</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '9', '124'])">Points of Interest</button>
+        </span>
+    </mat-menu>
 
-        <!--start navi-->
-        <div id="navi" class="grid_9 omega">
+    <mat-menu #warcraft="matMenu">
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '54', '384'])">Shaman Transmogs</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '55', '385'])">Druid Transmogs</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '56', '386'])">Rogue Transmogs</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '57', '387'])">Hunter Transmogs</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '58', '388'])">Death Knight Transmogs</button>
+        <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '59', '389'])">Mage Transmogs</button>
+    </mat-menu>
 
-            <div id="strangemenu" class="clearfix">
-                <ul>
-                    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-                    <li *ngIf="showGallery" jmaMenuDropdown><a routerLink="/gallery" routerLinkActive="active">Galleries</a>
-                        <ul>
-                            <li><a routerLink="/gallery/category/8/118" routerLinkActive="active">J-Pop</a></li>
-                            <li><a routerLink="/gallery/category/9/119" routerLinkActive="active">Import Scene</a></li>
-                            <li jmaMenuDropdown><a routerLink="/gallery/category/10/120" routerLinkActive="active" class="top: 0px; visibility: visible; left: 201px; width: 202px;">World of Warcraft</a>
-                                <ul>
-                                    <li><a routerLink="/gallery/category/16/126" routerLinkActive="active">Shaman Transmogs</a></li>
-                                    <li><a routerLink="/gallery/category/17/127" routerLinkActive="active">Druid Transmogs</a></li>
-                                    <li><a routerLink="/gallery/category/18/128" routerLinkActive="active">Rogue Transmogs</a></li>
-                                    <li><a routerLink="/gallery/category/19/129" routerLinkActive="active">Hunter Transmogs</a></li>
-                                    <li><a routerLink="/gallery/category/20/130" routerLinkActive="active">Death Knight Transmogs</a></li>
-                                    <li><a routerLink="/gallery/category/21/131" routerLinkActive="active">Mage Transmogs</a></li>
-                                </ul>
-                            </li>
-                            <li><a routerLink="/gallery/category/11/124" routerLinkActive="active">Beautiful Art</a></li>
-                            <li><a routerLink="/gallery/category/12/121" routerLinkActive="active">Comic Con</a></li>
-                            <li><a routerLink="/gallery/category/13/122" routerLinkActive="active">Cosplay</a></li>
-                            <li><a routerLink="/gallery/category/15/123" routerLinkActive="active">Fanime Con</a></li>
-                            <li><a routerLink="/gallery/category/14/125" routerLinkActive="active">Points of Intrest</a></li>
-                        </ul>
-                    </li>
-                    <li *ngIf="showVideos" jmaMenuDropdown><a routerLink="/videos" routerLinkActive="active">Videos</a>
-                        <ul>
-                            <li jmaMenuDropdown><a routerLink="/videos/category/22/138" routerLinkActive="active">J-Pop</a>
-                                <ul>
-                                    <li><a routerLink="/videos/category/23/139" routerLinkActive="active">Utada Hikaru</a></li>
-                                    <li><a routerLink="/videos/category/24/140" routerLinkActive="active">BoA</a></li>
-                                    <li><a routerLink="/videos/category/25/141" routerLinkActive="active">Ayumi Hamasaki</a></li>
-                                </ul>
-                            </li>
-                            <li><a routerLink="/videos/category/26/142" routerLinkActive="active">Warhammer</a></li>
-                            <li jmaMenuDropdown><a routerLink="/videos/category/27/143" routerLinkActive="active">World of Warcraft</a>
-                                <ul>
-                                    <li><a routerLink="/videos/category/30/144" routerLinkActive="active">Shaman</a></li>
-                                    <li><a routerLink="/videos/category/31/145" routerLinkActive="active">Druid</a></li>
-                                    <li><a routerLink="/videos/category/32/146" routerLinkActive="active">Mage</a></li>
-                                    <li><a routerLink="/videos/category/33/147" routerLinkActive="active">Rogue</a></li>
-                                    <li><a routerLink="/videos/category/34/148" routerLinkActive="active">Group and Story</a></li>
-                                </ul>
-                            </li>
-                            <li><a routerLink="/videos/category/28/149" routerLinkActive="active">Dragon Nest</a></li>
-                            <li><a routerLink="/videos/category/29/150" routerLinkActive="active">Import Scene</a></li>
-                            <li><a routerLink="/videos/category/37/166" routerLinkActive="active">Live Streams</a></li>
-                        </ul>
-                    </li>
-                    <li *ngIf="showContact"><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-        <!--end navi-->
-    </div>
+    <mat-menu #videos="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="jpopvideos" (click)="navigateToPage(['/videos', 'category', '29', '170'])">J-Pop</button>
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '35', '175'])">Warhammer</button>
+        <button mat-menu-item [matMenuTriggerFor]="warcraftvideos" (click)="navigateToPage(['/videos', 'category', '37', '177'])">World of Warcraft</button>
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '50', '288'])">Dragon Nest</button>
+    </mat-menu>
+
+    <mat-menu #jpopvideos="matMenu">
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '30', '171'])">Utada Hikaru</button>
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '31', '172'])">BoA</button>
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '32', '173'])">Ayumi Hamasaki</button>
+    </mat-menu>
+
+    <mat-menu #warcraftvideos="matMenu">
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '390', '60'])">Shaman</button>
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '391', '61'])">Druid</button>
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '392', '62'])">Mage</button>
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '393', '63'])">Rogue</button>
+        <button mat-menu-item (click)="navigateToPage(['/videos', 'category', '394', '64'])">Group and Story</button>
+    </mat-menu>
 </div>
-<!--end header-->
