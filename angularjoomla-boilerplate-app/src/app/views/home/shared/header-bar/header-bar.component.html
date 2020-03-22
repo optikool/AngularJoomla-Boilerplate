@@ -4,14 +4,18 @@
         #menuTrigger="matMenuTrigger"
         [matMenuTriggerFor]="menu">Menu</button> -->
     <button mat-button (click)="navigateToPage([''])">Home</button>
+    
     <button mat-button
         style="z-index:1050"
         id="gallery-btn"
+        #galleryButton
         #galleryMenuTrigger="matMenuTrigger"
-        (mouseenter)="galleryMenuTrigger.openMenu()"
+        (mouseenter)="buttonEnter(galleryMenuTrigger)" 
+        (mouseleave)="buttonLeave(galleryMenuTrigger, galleryButton)"
         [matMenuTriggerFor]="galleries"
         (click)="navigateToPage(['/gallery'])"
         >Galleries</button>
+    
     <!-- <button mat-button
         style="z-index:1050"
         id="videos-btn"
@@ -24,10 +28,10 @@
     <button mat-button (click)="navigateToPage(['/contact-us'])">Contact Us</button>
 
     <mat-menu #galleries="matMenu" >
-        <span>
+        <span (mouseenter)="menuEnter()" (mouseleave)="menuLeave(galleryMenuTrigger, galleryButton)">
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '8', '123'])">J-Pop</button>
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '10', '125'])">Import Scene</button>
-        <button mat-menu-item [matMenuTriggerFor]="warcraft" (click)="navigateToPage(['/gallery', 'category', '11', '126'])">World of Warcraft</button>
+        <button mat-menu-item #warcraftButton #warcraftTrigger="matMenuTrigger" [matMenuTriggerFor]="warcraft" (click)="navigateToPage(['/gallery', 'category', '11', '126'])">World of Warcraft</button>
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '12', '127'])">Beautiful Art</button>
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '52', '382'])">Comic Con</button>
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '14', '129'])">Cosplay</button>
@@ -37,12 +41,14 @@
     </mat-menu>
 
     <mat-menu #warcraft="matMenu">
+        <span (mouseenter)="menu2enter()" (mouseleave)="menu2Leave(galleryMenuTrigger, warcraftTrigger, warcraftButton)">
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '54', '384'])">Shaman Transmogs</button>
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '55', '385'])">Druid Transmogs</button>
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '56', '386'])">Rogue Transmogs</button>
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '57', '387'])">Hunter Transmogs</button>
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '58', '388'])">Death Knight Transmogs</button>
         <button mat-menu-item (click)="navigateToPage(['/gallery', 'category', '59', '389'])">Mage Transmogs</button>
+        </span>
     </mat-menu>
 
     <mat-menu #videos="matMenu">
