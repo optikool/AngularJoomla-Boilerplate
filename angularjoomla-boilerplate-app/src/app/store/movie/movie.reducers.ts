@@ -19,16 +19,16 @@ const reducer = createReducer(
             Movies: payload
         }
     }),
-    on(MovieActions.GetMoviesLatestAction, (state: MovieState, { payload }) => {
+    on(MovieActions.GetMoviesLatestAction, (state: MovieState) => {
         return {
             ...state,
-            LatestMovies: state.Movies.slice(0, payload)
+            LatestMovies: state.Movies.slice(0, state.LatestMoviesLimit)
         }
     }),
-    on(MovieActions.SetMoviesLatestAction, (state: MovieState, { payload }) => {
+    on(MovieActions.SetMoviesLatestLimitAction, (state: MovieState, { payload }) => {
         return {
             ...state,
-            LatestMovies: state.Movies.slice(0, payload)
+            LatestMoviesLimit: payload
         }
     }),
     on(MovieActions.GetMoviesRandomAction, (state) => {

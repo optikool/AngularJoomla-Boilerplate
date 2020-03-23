@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpService } from '../../services/http.service';
+// import { HttpService } from '../../services/http.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -17,7 +17,7 @@ export class VideosMainComponent implements OnInit {
   videosRandom: Array<any>;
   videoData: Array<any>;
 
-  constructor(private http: HttpService, private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
     this.teaserInfoReady = false;
     this.videoDataReady = false;
     this.videosRandomReady = false;
@@ -42,11 +42,11 @@ export class VideosMainComponent implements OnInit {
     let that = this;
     const limit: number = 40;
 
-    this.videoDataPromise = this.http.getMovieData(limit)
-    .subscribe((data) => {
-      // that.videoData = data;
-      that.videoDataReady = true;
-    });
+    // this.videoDataPromise = this.http.getMovieData(limit)
+    // .subscribe((data) => {
+    //   // that.videoData = data;
+    //   that.videoDataReady = true;
+    // });
   }
 
   getFooterTeasers() {

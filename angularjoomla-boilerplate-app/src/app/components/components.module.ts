@@ -7,21 +7,30 @@ import { VideoFceComponent } from './video/video-fce/video-fce.component';
 import { GalleryCollectionsComponent } from './gallery/gallery-collections/gallery-collections.component';
 import { GalleryCollectionComponent } from './gallery/gallery-collection/gallery-collection.component';
 import { GalleryFceComponent } from './gallery/gallery-fce/gallery-fce.component';
+import { MaterialsModule } from '../helpers/materials.module';
 
 
 @NgModule({
   declarations: [
-  VideoCollectionsComponent,
-  VideoCollectionComponent,
-  VideoFceComponent,
-  GalleryCollectionsComponent,
-  GalleryCollectionComponent,
-  GalleryFceComponent],
+    VideoCollectionsComponent,
+    VideoCollectionComponent,
+    VideoFceComponent,
+    GalleryCollectionsComponent,
+    GalleryCollectionComponent,
+    GalleryFceComponent
+  ],
   imports: [
     CommonModule,
-    DirectivesModule
+    DirectivesModule,
+    MaterialsModule
   ],
   exports: [
+    VideoCollectionsComponent,
+    VideoCollectionComponent,
+    VideoFceComponent,
+    GalleryCollectionsComponent,
+    GalleryCollectionComponent,
+    GalleryFceComponent
   ]
 })
 export class ComponentsModule { }

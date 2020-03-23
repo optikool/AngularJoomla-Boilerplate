@@ -1,12 +1,13 @@
-import { WindowScrollDirective } from './window-scroll.directive';
+import { MenuDropdownDirective } from './menu-dropdown.directive';
 import { ElementRef, Renderer } from '@angular/core';
 
-describe('WindowScrollDirective', () => {
+describe('MenuDropdownDirective', () => {
   let el: ElementRef;
   let renderer: Renderer;
+  let elRefMock = {};
 
   beforeEach(() => {
-    let elRefMock = {
+    elRefMock = {
       nativeElement: document.createElement('div')
     };
 
@@ -14,7 +15,7 @@ describe('WindowScrollDirective', () => {
   });
 
   it('should create an instance', () => {
-    const directive = new WindowScrollDirective(el, renderer);
+    const directive = new MenuDropdownDirective(el, renderer);
     expect(directive).toBeTruthy();
   });
 });

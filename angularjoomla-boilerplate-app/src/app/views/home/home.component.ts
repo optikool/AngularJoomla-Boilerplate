@@ -1,17 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { VgAPI } from 'videogular2/compiled/core';
-// import GalleryState from 'src/app/store/gallery/gallery.state';
-import { Store, select } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { Collection } from '../../store/gallery/gallery.model';
-import { map } from 'rxjs/operators';
 import * as fromApp from '../../store/app.reducers';
 import * as GalleryActions from '../../store/gallery/gallery.actions';
 import * as MovieActions from '../../store/movie/movie.actions';
-import * as ArticleActions from '../../store/article/article.actions';
-import GalleryState from '../../store/gallery/gallery.state';
-import MovieState from '../../store/movie/movie.state';
-import ArticleState from '../../store/article/article.state';
 
 @Component({
   selector: 'app-home',
@@ -20,37 +13,21 @@ import ArticleState from '../../store/article/article.state';
 })
 export class HomeComponent implements OnInit {
   public preload:string = 'auto';
+  public galleryCollection: Array<Collection>  = [];
+  public galleryLatestLimit: number = 9;
+  public movieLatestLimit: number = 6;
+  public galleryColumns: number = 3;
+  public movieColumns: number = 3;
   // public api: VgAPI;
   // public video = {
   //   src: '/assets/videos/Utada_Hikaru_Deep_River.mp4'
   // };
-  private gallery$: Observable<GalleryState>;
-  private gallerySubscription: Subscription;
-  private movie$: Observable<MovieState>;
-  private movieSubscription: Subscription;
-  private blog$: Observable<ArticleState>;
-  private blogSubscription: Subscription;
 
-  constructor(private store: Store<{gallery: GalleryState}>) {
-    this.gallery$ = this.store.pipe(select('gallery'));
-    this.store.dispatch(GalleryActions.GetCollectionsAllAction());
-    // this.movie$ = this.store.pipe(select('movie'));
-    this.store.dispatch(MovieActions.GetMoviesAllAction());
-    // this.blog$ = this.store.pipe(select('blog'));
-    this.store.dispatch(ArticleActions.GetArticlesAllAction());
-  }
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit() {
-    console.log('Initializing...');
-    
-    this.gallerySubscription = this.gallery$.pipe(map((data) => {
-      console.log('data: ', data);
-      
-    }))
-    .subscribe();
-    
-    this.store.dispatch(GalleryActions.GetCollectionsRandomAction({ payload: 10 }));
-    this.store.dispatch(GalleryActions.GetCollectionsLatestAction({ payload: 6 }));
+    this.store.dispatch(GalleryActions.GetCollectionsAllAction());
+    this.store.dispatch(MovieActions.GetMoviesAllAction());
   }
 
   onPlayerReady(api: VgAPI) {
@@ -58,8 +35,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.gallerySubscription.unsubscribe();
-    
   }
 }
 

@@ -7,6 +7,7 @@ import { FancyCaptionSingleComponent } from "./fancy-caption-single/fancy-captio
 import { GalleryCollectionComponent } from "./gallery-collection/gallery-collection.component";
 import { GalleryCollectionsComponent } from "./gallery-collections/gallery-collections.component";
 import { GalleryFceComponent } from "./gallery-fce/gallery-fce.component";
+import { MaterialsModule } from '../../../helpers/materials.module';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { GalleryFceComponent } from "./gallery-fce/gallery-fce.component";
     imports: [
         CommonModule,
         SharedModule,
-        RouterModule
+        RouterModule,
+        MaterialsModule
         // NgxImageGalleryModule
     ],
     exports: [

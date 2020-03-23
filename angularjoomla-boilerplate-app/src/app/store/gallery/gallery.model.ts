@@ -17,7 +17,7 @@
 // "imgThumb": "http:\/\/localhost\/optikool-app\/\/components\/com_xgallery\/helpers\/img.php?tn=1&file=optikool\/optikool1392863227\/AsianPictureSmallweb.jpg",
 // "tags": []
 
-export class Collection {
+export interface Collection {
     id: number;
     title: string;
     alias: string;
@@ -36,6 +36,7 @@ export class Collection {
     src: string;
     imgThumb: string;
     tags: Array<string>;
+    isActive?: string;
 }
 
 // "id": "12",
@@ -53,7 +54,7 @@ export class Collection {
 // "metadata": "{\"author\":\"\",\"robots\":\"\"}"
 
 
-export class CollectionCategory {
+export interface CollectionCategory {
     id: number;
     parent_id: number;
     level: number;

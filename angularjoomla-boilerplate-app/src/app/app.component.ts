@@ -10,7 +10,10 @@ import { SwUpdate } from '@angular/service-worker';
 export class AppComponent implements OnInit {
   title = 'angularjoomla-boilerplate-app: '; // + Date.now().toString();
 
-  constructor(private router: Router, private route: ActivatedRoute, private swUpdate: SwUpdate) {}
+  constructor(
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private swUpdate: SwUpdate) {}
 
   ngOnInit() {
     // Reload app if new content is available

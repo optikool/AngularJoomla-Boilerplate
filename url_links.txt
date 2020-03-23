@@ -1,0 +1,25 @@
+Gallery - http://localhost/optikool-app/index.php?option=com_xgallery&view=main&Itemid=122
+Warcraft - http://localhost/optikool-app/index.php?view=category&id=11:world-of-warcraft&Itemid=126&option=com_xgallery
+Points of Interest - http://localhost/optikool-app/index.php?view=category&id=9:points-of-interest&Itemid=124&option=com_xgallery
+J-Pop - http://localhost/optikool-app/index.php?view=category&id=8:j-pop&Itemid=123&option=com_xgallery
+Import Scene - http://localhost/optikool-app/index.php?view=category&id=10:import-scene&Itemid=125&option=com_xgallery
+Beautiful Art - http://localhost/optikool-app/index.php?view=category&id=12:beautiful-art&Itemid=127&option=com_xgallery
+Single - http://localhost/optikool-app/index.php?option=com_xgallery&view=single&catid=11:world-of-warcraft&id=108:kayumi-fire-enhancement&Itemid=126
+
+Movies - http://localhost/optikool-app/index.php?option=com_xmovie&view=main&Itemid=133
+J-Pop - http://localhost/optikool-app/index.php?view=category&id=29:j-pop&Itemid=170&option=com_xmovie
+Utada Hikaru - http://localhost/optikool-app/index.php?view=category&id=30:utada-hikaru&Itemid=171&option=com_xmovie
+BoA - http://localhost/optikool-app/index.php?view=category&id=31:boa&Itemid=172&option=com_xmovie
+Ayumi Hamasaki - http://localhost/optikool-app/index.php?view=category&id=32:ayumi-hamasaki&Itemid=173&option=com_xmovie
+Shows - http://localhost/optikool-app/index.php?view=category&id=34:shows&Itemid=174&option=com_xmovie
+Warhammer - http://localhost/optikool-app/index.php?view=category&id=35:warhammer&Itemid=175&option=com_xmovie
+Tutorials - http://localhost/optikool-app/index.php?view=category&id=36:tutorials&Itemid=176&option=com_xmovie
+World of Warcraft - http://localhost/optikool-app/index.php?view=category&id=37:world-of-warcraft&Itemid=177&option=com_xmovie
+Dragon Nest - http://localhost/optikool-app/index.php?view=category&id=50:dragon-nest&Itemid=288&option=com_xmovie
+Single - http://localhost/optikool-app/index.php?option=com_xmovie&view=single&catid=50:dragon-nest&id=172:my-video-ii&Itemid=288
+
+Blog & News - http://localhost/optikool-app/index.php?option=com_content&view=article&id=4&Itemid=149
+Blog - http://localhost/optikool-app/index.php?option=com_content&view=category&id=16&Itemid=153
+XGallery News - http://localhost/optikool-app/index.php?option=com_content&view=category&id=17&Itemid=150
+XMovie News - http://localhost/optikool-app/index.php?option=com_content&view=category&id=18&Itemid=151
+The Call - http://localhost/optikool-app/index.php?option=com_content&view=article&id=113:the-call&catid=16&Itemid=156

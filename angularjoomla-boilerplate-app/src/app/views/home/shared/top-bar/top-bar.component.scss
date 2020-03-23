@@ -1,0 +1,10 @@
+.mat-nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .mat-list-item {
+        width: auto;
+        font-size: 12px;
+    }
+}

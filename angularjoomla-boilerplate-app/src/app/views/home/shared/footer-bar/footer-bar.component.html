@@ -1,14 +1,7 @@
-<!--start footer-->
-<div id="footer_bg" class="fluid">
-    <div id="footer">
-        <div class="container_12 clearfix">
-            <div *ngFor="let column of galleriesRandom" class="footer_widget {{column.grid}}">
-                <div [ngSwitch]="column.type">
-                    <jma-gallery-collection *ngSwitchCase="'collection'" [data]="column" [cClass]="footer_title"></jma-gallery-collection>
-                    <jma-videos-collection *ngSwitchCase="'video'" [data]="column" [cClass]="footer_title"></jma-videos-collection>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--end footer-->
+<mat-nav-list fxLayout>
+    <a mat-list-item (click)="navigateToPage([''])">Home</a>
+    <a mat-list-item (click)="navigateToPage(['/gallery'])">Galleries</a>
+    <a mat-list-item (click)="navigateToPage(['/videos'])">Videos</a>
+    <a mat-list-item (click)="navigateToPage(['/blog'])">Blog</a>
+    <a mat-list-item (click)="navigateToPage(['/contact-us'])">Contact Us</a>
+ </mat-nav-list>

@@ -1,14 +1,7 @@
-<!--start topbar-->
-<div id="top" class="fluid">
-    <div class="container_12">
-        <div class="grid_12">
-            <ul class="social">
-                <li><a (click)="goToSocial('facebook')">facebook</a></li>
-                <li><a (click)="goToSocial('linkedin')">linkedin</a></li>
-                <li><a (click)="goToSocial('twitter')">twitter</a></li>
-                <li><a (click)="goToSocial('youtube')">youtube</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--end top-bar-->
+<mat-nav-list fxLayout>
+    <a mat-list-item href="..." *ngFor="let link of links"> {{ link }} </a>
+    <a mat-list-item (click)="goToSocial('facebook')">facebook</a>
+    <a mat-list-item (click)="goToSocial('linkedin')">linkedin</a>
+    <a mat-list-item (click)="goToSocial('twitter')">twitter</a>
+    <a mat-list-item (click)="goToSocial('youtube')">youtube</a>
+ </mat-nav-list>

@@ -3,9 +3,10 @@ import { ElementRef } from '@angular/core';
 
 describe('ScrollableDirective', () => {
   let el: ElementRef;
+  let elRefMock = {};
 
   beforeEach(() => {
-    let elRefMock = {
+    elRefMock = {
       nativeElement: document.createElement('div')
     };
 

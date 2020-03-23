@@ -7,6 +7,10 @@ import { VgControlsModule } from 'videogular2/compiled/controls';
 import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
 import { VgBufferingModule } from 'videogular2/compiled/buffering';
 import { VgStreamingModule } from 'videogular2/compiled/streaming';
+import { ComponentsModule } from '../components/components.module';
+import { MaterialsModule } from '../helpers/materials.module';
+import { GalleryModulesModule } from './gallery/modules/gallery-modules.module';
+import { VideosModulesModule } from './videos/modules/videos-modules.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { VgStreamingModule } from 'videogular2/compiled/streaming';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    VgStreamingModule
+    VgStreamingModule,
+    ComponentsModule,
+    GalleryModulesModule,
+    VideosModulesModule,
+    MaterialsModule
   ],
   exports: [
   ]

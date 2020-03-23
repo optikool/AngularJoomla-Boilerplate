@@ -1,14 +1,13 @@
-#strangemenu {
-    ul {
-        li {
-            ul {
-                li {
-                    ul {
-                        position: absolute;
-                        left: 200px;
-                    }
-                }
-            }
-        }
+#header-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+button {
+    outline: none;
+
+    div {
+        outline: none;
     }
 }
