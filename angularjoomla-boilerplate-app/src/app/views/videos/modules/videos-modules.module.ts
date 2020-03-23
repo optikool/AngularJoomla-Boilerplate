@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
-import { SharedModule } from "../../../widgets/shared/shared.module";
 import { FancyCaptionMovieComponent } from "./fancy-caption-movie/fancy-caption-movie.component";
 import { VideosCollectionComponent } from "./videos-collection/videos-collection.component";
 import { VideosCollectionsComponent } from "./videos-collections/videos-collections.component";
@@ -18,7 +17,6 @@ import { MaterialsModule } from '../../../helpers/materials.module';
     ],
     imports: [
         CommonModule,
-        SharedModule,
         RouterModule,
         PipesModule,
         MaterialsModule

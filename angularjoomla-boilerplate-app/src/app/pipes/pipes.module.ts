@@ -6,7 +6,6 @@ import { OuterElementPipe } from "./outer-element.pipe";
 import { SafeHtmlPipe } from "./safe-html.pipe";
 import { TagFormatterPipe } from "./tag-formatter.pipe";
 import { WrapThemeColorPipe } from "./wrap-theme-color.pipe";
-import { SharedModule } from "../widgets/shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -18,8 +17,7 @@ import { SharedModule } from "../widgets/shared/shared.module";
         WrapThemeColorPipe
     ],
     imports: [
-        CommonModule,
-        SharedModule
+        CommonModule
     ],
     exports: [
         DateFormatterPipe,

@@ -1,28 +1,11 @@
-import { Component, OnInit, ViewChild, HostListener, Renderer2 } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatMenuTrigger } from '@angular/material';
 
 @Component({
   selector: 'jma-header-bar',
   templateUrl: './header-bar.component.html',
-  styleUrls: ['./header-bar.component.scss'],
-  animations: [
-    trigger('dropdownMenuState', [
-      state('dropdownHidden', style({
-        visibility: 'hidden',
-        display: 'none'
-      })),
-      state('dropdownVisible', style({
-        top: '29px', 
-        visibility: 'visible',
-        left: '1px', 
-        width: '202px',
-        display: 'block'
-      })),
-      transition('dropdownHidden <=> dropdownVisible', animate('250ms ease-in'))
-    ])
-  ]
+  styleUrls: ['./header-bar.component.scss']
 })
 export class HeaderBarComponent implements OnInit {
   showGallery: Boolean;

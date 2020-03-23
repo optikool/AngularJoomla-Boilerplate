@@ -32,6 +32,7 @@ import { environment } from '../environments/environment';
 import { GalleryService } from './services/gallery.service';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialsModule } from './helpers/materials.module';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MaterialsModule } from './helpers/materials.module';
     VgOverlayPlayModule,
     VgBufferingModule,
     VgStreamingModule,
+    MatCarouselModule.forRoot(),
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([ArticleEffect, GalleryEffect, MovieEffect]),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),

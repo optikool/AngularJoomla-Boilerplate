@@ -1,10 +1,32 @@
-<!--start slider -->
-<div id="slider-wrapper" class="fluid" jmaCarouselAnimation [data]="galleries">
-    <!--start slider images-->
+<mat-carousel
+  timings="250ms ease-in"
+  [autoplay]="true"
+  interval="5000"
+  color="accent"
+  maxWidth="auto"
+  proportion="25"
+  slides="5"
+  [loop]="true"
+  [hideArrows]="false"
+  [hideIndicators]="false"
+  [useKeyboard]="true"
+  [useMouseWheel]="false"
+  orientation="ltr"
+>
+  <mat-carousel-slide
+    #matCarouselSlide
+    *ngFor="let slide of slides; let i = index"
+    [image]="slide.image"
+    overlayColor="#00000040"
+    [hideOverlay]="false"
+  ></mat-carousel-slide>
+</mat-carousel>
+
+
+<!-- <div id="slider-wrapper" class="fluid" jmaCarouselAnimation [data]="galleries">
     <ul id="slider">
         <li *ngFor="let item of galleries; let i = index" class="panel">
             <div class="slider-item item_{{i}}" [ngStyle]="{'background-image': 'url(' + item.src + ')'}">
-                <!--start slider 1 caption -->
                 <div class="caption-content {{item.animateClassName}}">
                     <p>
                         <span>{{item.title}}</span>
@@ -13,11 +35,9 @@
                         <strong>{{item.cattitle}}</strong>
                     </p>
                 </div>
-                <!--end slider 1 caption -->
             </div>
         </li>
     </ul>
-    <!--end slider images-->
     <div class="anythingControls">
         <a href="#" class="start-stop playing">
             <span>Stop</span>
@@ -30,10 +50,7 @@
             </li>
         </ul>
     </div>
-    <!--slider navigation-->
     <div id="prev-button" class="prevButton slidebackward"></div>
     <div id="next-button" class="nextButton slideforward"></div>
     <div id="pause-button" class="pauseButton"></div>
-    <!--end slider navigation-->
-</div>
-<!-- end slider -->
+</div> -->

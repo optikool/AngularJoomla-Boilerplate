@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 // import { NgxImageGalleryModule } from "ngx-image-gallery";
-import { SharedModule } from "../../../widgets/shared/shared.module";
 import { FooterBarComponent } from "./footer-bar/footer-bar.component";
 import { HeaderBarComponent } from "./header-bar/header-bar.component";
 import { SubfooterBarComponent } from "./subfooter-bar/subfooter-bar.component";
@@ -20,7 +19,6 @@ import { MatMenuModule, MatButtonModule, MatToolbarModule, MatIconModule, MatLis
     ],
     imports: [
         CommonModule,
-        SharedModule,
         GalleryModulesModule,
         VideosModulesModule,
         RouterModule,

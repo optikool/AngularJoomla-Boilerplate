@@ -13,6 +13,7 @@ import * as MovieActions from '../../store/movie/movie.actions';
 })
 export class HomeComponent implements OnInit {
   public preload:string = 'auto';
+  public sliderWidgetData: Array<any> = [];
   public galleryCollection: Array<Collection>  = [];
   public galleryLatestLimit: number = 9;
   public movieLatestLimit: number = 6;

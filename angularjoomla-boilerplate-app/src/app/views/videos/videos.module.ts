@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 //import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from "@angular/common";
-import { SharedModule } from '../../widgets/shared/shared.module';
-import { WidgetModule } from '../../widgets/widget.module';
+// import { SharedModule } from '../../widgets/shared/shared.module';
+// import { WidgetModule } from '../../widgets/widget.module';
 import { HomeSharedModule } from '../home/shared/home-shared.module';
 import { PipesModule } from '../../pipes/pipes.module';
 // import { NgxImageGalleryModule } from 'ngx-image-gallery';
@@ -32,8 +32,8 @@ import { VideosModulesModule } from './modules/videos-modules.module';
       //HttpClient,
       HttpClientModule,
       VideosRoutingModule,
-      SharedModule,
-      WidgetModule,
+      // SharedModule,
+      // WidgetModule,
       PipesModule,
       // NgxImageGalleryModule,
       VideosModulesModule,
