@@ -63,7 +63,7 @@
     "@types/node": "~8.9.4",
     "cache-manager": "^2.10.1",
     "cache-module": "0.0.6",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.11.0",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
