@@ -42,7 +42,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^8.0.0",
     "bootstrap": "^4.4.1",
     "fastify": "^2.11.0",
-    "fastify-static": "^2.5.1",
+    "fastify-static": "^4.2.4",
     "hammerjs": "^2.0.8",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.3",
